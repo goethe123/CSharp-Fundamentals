@@ -1,129 +1,156 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Ejercicio práctico de Interfaces en C#
+// -----------------------------------------
+// Este ejemplo muestra cómo crear interfaces y usarlas en diferentes clases.
+// Las interfaces definen un contrato: si una clase las implementa, debe proporcionar
+// una implementación para todos sus métodos.
+
+// Importamos librerías necesarias
+using System;
+
 namespace Ejercicio12
 {
-
+    // Interface: define el contrato para mamíferos terrestres
     public interface IMamiferosTerrestres
     {
-        int NumeroPatas();
+        int NumeroPatas(); // Método que devuelve el número de patas
     }
 
+    // Interface: define el contrato para animales que participan en deportes
+    public interface IAnimalesYDeportes
+    {
+        string TipoDeporte(); // Tipo de deporte en el que participa
+        bool EsOlimpico();    // Si el deporte es olímpico o no
+    }
+
+    // Interface: define el contrato para animales que saltan con patas
+    public interface ISaltoConPatas
+    {
+        int NumeroPatas(); // Similar al anterior, pero para saltadores
+    }
 
     public class Program
     {
         public static void Main(String[] args)
         {
-
-            Caballo caballo1 = new Caballo("milica");
-            Humano humano1 = new Humano("mitzi");
-            Gorila gorila1 = new Gorila("mili");
+            
+            // Creamos instancias de distintas clases
+            Caballo caballo1 = new Caballo("Milica");
+            IMamiferosTerrestres Icaballo1 = caballo1;
+            Humano humano1 = new Humano("Mitzi");
+            Gorila gorila1 = new Gorila("Mili");
             Ballena ballena1 = new Ballena("Willy");
 
-            Mamifero animal = new Caballo("pol");
+            // Ejemplo de polimorfismo: variable de tipo Mamifero
+            Mamifero animal = new Caballo("Pol");
 
+            // Llamamos a métodos de cada instancia
             caballo1.GetNombre();
             humano1.GetNombre();
             gorila1.GetNombre();
 
-
+            // Creamos un array de mamíferos
             Mamifero[] ArrayMamiferos = new Mamifero[3];
-
             ArrayMamiferos[0] = caballo1;
             ArrayMamiferos[1] = humano1;
             ArrayMamiferos[2] = gorila1;
 
+            // Ejemplo de polimorfismo dinámico con override
             for (int i = 0; i < 3; i++)
             {
                 ArrayMamiferos[i].Pensar();
             }
 
+            // Ballena usa un método propio
             ballena1.Nadar();
 
-            System.Console.WriteLine( caballo1.NumeroPatas());
-
-
-
-
+            // Ejemplo de uso de un método definido en una interface
+            Console.WriteLine(Icaballo1.NumeroPatas());
         }
     }
 
+    // Clase base para todos los mamíferos
     public class Mamifero
     {
-        private string NombreSerVivo;
+        private string NombreSerVivo; // Campo privado con el nombre
 
-
+        // Método común para todos los mamíferos
         public void CuidarCrias()
         {
-            Console.WriteLine("soy caapaz de cuidar mis crias");
+            Console.WriteLine("Soy capaz de cuidar mis crías");
         }
 
         public void Respirar()
         {
-            Console.WriteLine("soy capaz de respirar");
+            Console.WriteLine("Soy capaz de respirar");
         }
 
         public void GetNombre()
         {
-            Console.WriteLine($"hola soy {NombreSerVivo}");
+            Console.WriteLine($"Hola, soy {NombreSerVivo}");
         }
 
-        public void respirar()
-        {
-            System.Console.WriteLine("soy capaz de pensar");
-        }
-
+        // Método virtual para que las clases hijas lo sobrescriban
         public virtual void Pensar()
         {
-            Console.WriteLine("soy capaz de pensar");
+            Console.WriteLine("Soy capaz de pensar");
         }
 
+        // Constructor para inicializar el nombre
         public Mamifero(string nombre)
         {
             NombreSerVivo = nombre;
         }
-
-
     }
 
-    public class Caballo : Mamifero, IMamiferosTerrestres
+    // Clase Caballo implementa dos interfaces
+    public class Caballo : Mamifero, IMamiferosTerrestres, IAnimalesYDeportes, ISaltoConPatas
     {
         public void Galopar()
         {
-            Console.WriteLine("soy capaz de galopar ");
+            Console.WriteLine("Soy capaz de galopar");
         }
 
         public override void Pensar()
         {
-            System.Console.WriteLine("soy capaz de penzar");
+            Console.WriteLine("Soy capaz de pensar");
         }
 
-        public Caballo(string NombreCaballo)
-        : base(NombreCaballo)
-        {
+        public Caballo(string NombreCaballo) : base(NombreCaballo) { }
 
-        }
-
-        public int NumeroPatas()
+        // Implementación del contrato IMamiferosTerrestres
+        int IMamiferosTerrestres.NumeroPatas()
         {
             return 4;
         }
+
+        // Implementación del contrato IAnimalesYDeportes
+        public string TipoDeporte()
+        {
+            return "Hípica";
+        }
+
+        public bool EsOlimpico()
+        {
+            return true;
+        }
+        int ISaltoConPatas.NumeroPatas()
+        {
+          return  2;
+        }
     }
 
-
+    // Clase Humano hereda de Mamifero, sin interfaces
     public class Humano : Mamifero
     {
         public override void Pensar()
         {
-            Console.WriteLine("soy capaz de pensar avanzadamente");
+            Console.WriteLine("Soy capaz de pensar avanzadamente");
         }
 
-        public Humano(string NombreHumano)
-        : base(NombreHumano)
-        {
-
-        }
+        public Humano(string NombreHumano) : base(NombreHumano) { }
     }
 
+    // Clase Gorila implementa una interface
     public class Gorila : Mamifero, IMamiferosTerrestres
     {
         public void Trepar()
@@ -133,34 +160,25 @@ namespace Ejercicio12
 
         public override void Pensar()
         {
-            System.Console.WriteLine("soy capaz de penza un poco másr");
+            Console.WriteLine("Soy capaz de pensar un poco más");
         }
 
-        public Gorila(string NombreGorila)
-        : base(NombreGorila)
-        {
+        public Gorila(string NombreGorila) : base(NombreGorila) { }
 
-        }
-         public int NumeroPatas()
+        public int NumeroPatas()
         {
             return 2;
         }
     }
 
+    // Clase Ballena hereda de Mamifero, sin interfaces
     public class Ballena : Mamifero
     {
-
-        public Ballena(string NombreBallena)
-        : base(NombreBallena)
-        {
-
-        }
+        public Ballena(string NombreBallena) : base(NombreBallena) { }
 
         public void Nadar()
         {
-            Console.WriteLine("soy capaz de nadar");
+            Console.WriteLine("Soy capaz de nadar");
         }
-
     }
-
 }
