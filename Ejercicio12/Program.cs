@@ -32,7 +32,7 @@ namespace Ejercicio12
     {
         public static void Main(String[] args)
         {
-            
+
             // Creamos instancias de distintas clases
             Caballo caballo1 = new Caballo("Milica");
             IMamiferosTerrestres Icaballo1 = caballo1;
@@ -65,11 +65,42 @@ namespace Ejercicio12
 
             // Ejemplo de uso de un método definido en una interface
             Console.WriteLine(Icaballo1.NumeroPatas());
+
+
+            Lagartija lagartija1 = new Lagartija("Teodoro");
+            lagartija1.Respirar();
+            lagartija1.GetNombre();
+            Humano Juan = new Humano("Juan");
+            Juan.Respirar(); 
+            
+        }
+    }
+
+    public abstract class Animales
+    {
+        public void Respirar()
+        {
+            System.Console.WriteLine("soy capaz de respirar");
+        }
+         public abstract void GetNombre();
+    }
+
+    public class Lagartija : Animales
+    {
+        private string nombreReptil;
+        public override void GetNombre()
+        {
+            Console.WriteLine($"hola soy {nombreReptil}");
+        }
+
+        public Lagartija(string nombre)
+        {
+            nombreReptil = nombre; 
         }
     }
 
     // Clase base para todos los mamíferos
-    public class Mamifero
+    public class Mamifero : Animales
     {
         private string NombreSerVivo; // Campo privado con el nombre
 
@@ -79,12 +110,7 @@ namespace Ejercicio12
             Console.WriteLine("Soy capaz de cuidar mis crías");
         }
 
-        public void Respirar()
-        {
-            Console.WriteLine("Soy capaz de respirar");
-        }
-
-        public void GetNombre()
+        public override void GetNombre()
         {
             Console.WriteLine($"Hola, soy {NombreSerVivo}");
         }
