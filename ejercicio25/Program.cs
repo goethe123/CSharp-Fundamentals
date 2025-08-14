@@ -25,3 +25,7 @@ namespace ejercicio26
         }
     }
 }
+
+//video 63
+// aqui creamos una list collection del tamaño que el usuario nos diga
+//luego la vamos llenando con un for para ifnalmente imprimir su contenido con otro for
