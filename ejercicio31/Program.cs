@@ -79,9 +79,10 @@ namespace ejercicio31
                         return false;
                     }
                 }
-
                 return true;
             }
         }
     }
 }
+
+//Represents the method that defines a set of criteria and determines whether the specified object meets those criteria.
