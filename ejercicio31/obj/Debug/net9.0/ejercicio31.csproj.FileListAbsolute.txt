@@ -1,0 +1,15 @@
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/bin/Debug/net9.0/ejercicio31
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/bin/Debug/net9.0/ejercicio31.deps.json
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/bin/Debug/net9.0/ejercicio31.runtimeconfig.json
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/bin/Debug/net9.0/ejercicio31.dll
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/bin/Debug/net9.0/ejercicio31.pdb
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.GeneratedMSBuildEditorConfig.editorconfig
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.AssemblyInfoInputs.cache
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.AssemblyInfo.cs
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.csproj.CoreCompileInputs.cache
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.sourcelink.json
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.dll
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/refint/ejercicio31.dll
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.pdb
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ejercicio31.genruntimeconfig.cache
+/Users/goetheramirezramirez/Desktop/CSharp-Fundamentals/ejercicio31/obj/Debug/net9.0/ref/ejercicio31.dll
