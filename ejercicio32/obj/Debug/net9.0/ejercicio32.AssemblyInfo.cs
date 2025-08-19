@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ejercicio32")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+098a348061c297c6af0756cda15ef644ce8bb47c")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b7c7a56311e745684c7d354c966cf55114aa366")]
+>>>>>>> 5a40065 (hm)
 [assembly: System.Reflection.AssemblyProductAttribute("ejercicio32")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ejercicio32")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
