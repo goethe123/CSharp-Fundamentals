@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,14 @@ namespace primer_interfaz
         public MainWindow()
         {
             InitializeComponent();
+            JuntaNombreyApellido = new JuntaNombre { Nombre = "Juan", Apellido = " Diaz" };
+            this.DataContext = JuntaNombreyApellido;
+
+
+
         }
+
+        public JuntaNombre JuntaNombreyApellido;
+
     }
 }

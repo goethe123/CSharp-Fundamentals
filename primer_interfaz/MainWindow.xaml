@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:primer_interfaz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" >
+    <StackPanel>
+        <TextBox Width="100" Name="MiCuadro" Margin="160" Text="{Binding ElementName=MiSlider, Path=Value, Mode=TwoWay }"></TextBox>
+        <Slider Width="350" Name="MiSlider" Minimum=" 0" Maximum="100"></Slider>
+    </StackPanel>
 </Window>
