@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConexionGestionPedidos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Activated = "Window_Activated">
+        
     <Grid>
         <Label Content="Clientes" HorizontalAlignment="Left" Margin="128,82,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <ListBox Name="ListaClientes" Margin="76,126,533,110" SelectionChanged="ListaClientes_SelectionChanged"/>
-        <Label Content="Pedidos" HorizontalAlignment="Left" Margin="605,93,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <ListBox Name ="PedidosCliente"  Margin="547,136,57,110"/>
+        <ListBox Name="ListaClientes" Margin="76,126,533,110" MouseDoubleClick="listaClientes_MouseDoubleClick"/>
+        <Label Content="Pedidos" HorizontalAlignment="Left" Margin="360,93,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <ListBox Name ="PedidosCliente"  Margin="302,136,302,110"/>
+        <ListBox Name ="TodosPedidos"  Margin="563,76,44,45"/>
+        <Button Content="Borrar
+" HorizontalAlignment="Left" Margin="600,24,0,0" VerticalAlignment="Top" Height="23" Width="134" Click="Button_Click"/>
+        <Button Content="Insertar" HorizontalAlignment="Left" Margin="76,343,0,0" VerticalAlignment="Top" Height="32" Width="61" Click="Button_Click_1"/>
+        <Button Content="Borrar" HorizontalAlignment="Left" Margin="157,344,0,0" VerticalAlignment="Top" Height="30" Width="58" Click="Button_Click_2"/>
+        <TextBox Name ="insertaCliente" HorizontalAlignment="Left" Margin="76,394,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="191" Height="30"/>
+        <Button Content="Actualizar" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="31" Width="196" Click="Button_Click_3"/>
 
     </Grid>
 </Window>
